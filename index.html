@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор для расчета</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="container">
+            <h1 class="calculator__title">Калькулятор стоимости ремонта</h1>
+            <p class="calculator__text">Базовая цена: 1 м² = 7 тыс. сом</p>
+
+            <form id="form">
+                <div class="square">
+                    <label class="square__label">
+                        <span class="square__meaning">Площадь квартиры:</span>
+                        <input class="square__input" type="number" id="square__input" min="0" max="200" value="50">
+                        <span class="square__meter">м²</span>
+                    </label>
+
+                    <input class="square__range" id="square__range" type="range" min="0" max="200" value="50">
+                </div>
+
+                <div class="repair-type">
+                    <h3 class="repair-type__title">Тип ремонта</h3>
+
+                    <label class="labels">
+                        <input type="radio" name="type" value="1" checked>
+
+                        <span class="radios">Косметический</span>
+                    </label>
+
+                    <label class="labels">
+                        <input type="radio" name="type" value="1.3">
+
+                        <div class="radios">
+                            Капитальный
+                            <span>+30% к стоимости</span>
+                        </div>
+                    </label>
+
+                    <label class="labels">
+                        <input type="radio" name="type" value="1.5">
+
+                        <div class="radios">
+                            Под ключ
+                            <span>+50% к стоимости</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="house-type">
+                    <h3 class="house-type__title">Тип дома</h3>
+
+                    <label class="labels">
+                        <input type="radio" name="house" value="1" checked>
+                        <span class="radios">Новострой</span>
+                    </label>
+
+                    <label class="labels">
+                        <input type="radio" name="house" value="1.1">
+
+                        <div class="radios">
+                            Вторичка
+                            <span>+10% к стоимости</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="rooms">
+                    <h3 class="rooms__title">Количество комнат</h3>
+
+                    <label class="labels">
+                        <input type="radio" name="rooms" value="1" checked>
+                        <span>1-к квартира</span>
+                    </label>
+
+                    <label class="labels">
+                        <input type="radio" name="rooms" value="1.05">
+                        <span>2-к квартира</span>
+                    </label>
+
+                    <label class="labels">
+                        <input type="radio" name="rooms" value="1.1">
+                        <span>3-к квартира</span>
+                    </label>
+                </div>
+
+                <div class="options">
+                    <h3 class="options__title">Дополнительные опции</h3>
+
+                    <label class="labels">
+                        <input type="checkbox" name="ceiling" value="250">
+                        <div class="radios">
+                            Натяжные потолки
+                            <span>+250c. за м. кв.</span>
+                        </div>
+                    </label>
+
+                    <label class="labels">
+                        <input type="checkbox" name="walls" value="1.1">
+                        <div class="radios">
+                            Покраска стен
+                            <span>+10% к стоимости</span>
+                        </div>
+                    </label>
+
+                    <label class="labels">
+                        <input type="checkbox" name="floor" value="1.1">
+                        <div class="radios">
+                            Теплый пол
+                            <span>+10% к стоимости</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="price">
+                    <div class="price__title">Стоимость ремонта:</div>
+                    <div class="price__value">
+                        <span id="total-price">0</span>
+                        сом
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
